@@ -11,9 +11,6 @@ export enum Type {
     //...
 }
 
-
-
-
 export interface OperandStack {
 
 }
