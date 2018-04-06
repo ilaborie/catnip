@@ -1,0 +1,44 @@
+.catnip {
+    .frame {
+        border: thin solid rgba(0, 0, 0, .5);
+        border-radius: .5rem;
+        padding: .5rem;
+        background-color: var(--frameColor);
+        --primaryColor: white;
+        box-shadow: .125rem .125rem .5rem rgba(0, 0, 0, .5);
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "header header" "code   stack" "locals locals";
+        opacity: 0.75;
+        filter: grayscale(.8);
+        &.current {
+            opacity: 1;
+            filter: none;
+        }
+        &>header {
+            grid-area: header;
+            text-align: center;
+            font-weight: bold;
+            &::before {
+                content: '📦 '
+            }
+            border-bottom: thin solid rgba(0, 0, 0, .5);
+        }
+        ul.code {
+            grid-area: code;
+            margin: .25rem;
+        }
+        .stack {
+            grid-area: stack;
+            align-self: end;
+            margin: .25rem;
+            box-shadow: .06125rem .06125rem .25rem rgba(0, 0, 0, .5);
+        }
+        .locals {
+            grid-area: locals;
+            margin: .25rem;
+            box-shadow: .06125rem .06125rem .25rem rgba(0, 0, 0, .5);
+        }
+    }
+}

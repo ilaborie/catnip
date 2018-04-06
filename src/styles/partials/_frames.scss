@@ -1,0 +1,14 @@
+.catnip {
+    .frames {
+        background: cornsilk;
+        &>div {
+            font-family: 'Fira Code', monospace;
+            display: flex;
+            flex-direction: column-reverse;
+            padding: .5rem;
+            .frame {
+                margin: .5rem 0;
+            }
+        }
+    }
+}

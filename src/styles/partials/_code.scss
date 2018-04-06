@@ -1,0 +1,45 @@
+.catnip {
+.code {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: hsla(0, 100%, 100%, .2);
+    li {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        &::before {
+            content: '➖ ';
+        }
+        >* {
+            padding: .125rem;
+        }
+        .position {
+            width: 2ch;
+            text-align: right
+        }
+        .code {
+            font-weight: bold;
+            max-height: 25vh;
+            overflow: auto;
+        }
+        .args {
+            margin-left: 1rem;
+            flex-grow: 1;
+            text-align: right;
+            margin-right: .25rem;
+        }
+    }
+    .selected {
+        // background-color: var(--selectedColor);
+        background-color: var(--primaryColor);
+        &::before {
+            content: '🔜 ';
+        }
+        &> * {
+            --primaryColor: var(--frameColor);
+        }
+    }
+}
+}

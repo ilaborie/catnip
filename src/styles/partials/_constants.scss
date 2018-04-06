@@ -1,0 +1,17 @@
+.catnip {
+  .constants {
+    display: grid;
+    grid-template-columns: 5ch 1fr 1fr;
+    grid-gap: .25rem;
+    font-family: 'Fira Code';
+    &>* {
+      padding: .125rem;
+    }
+    .index {
+      text-align: right;
+      &::before {
+        content: '#';
+      }
+    }
+  }
+}

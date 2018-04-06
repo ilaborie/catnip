@@ -1,0 +1,36 @@
+.catnip {
+    .locals {
+        background: #47bd82;
+        border-radius: .25rem;
+        color: white;
+        padding: .25rem;
+        header {
+            text-align: center;
+        }
+        &>div {
+            display: flex;
+            counter-reset: loc -1;
+            &>div {
+                background-color: hsla(0, 100%, 100%, .2);
+                border: medium solid currentColor;
+                flex-grow: 1;
+                text-align: center;
+                position: relative;
+                &.empty::after {
+                    content: '·'
+                }
+                counter-increment: loc;
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    top: -2ch;
+                    color: hsla(0, 100%, 100%, .75);
+                    content: counter(loc);
+                }
+            }
+            &>div+div {
+                margin-left: .125rem;
+            }
+        }
+    }
+}

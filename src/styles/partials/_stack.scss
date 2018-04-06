@@ -1,0 +1,32 @@
+.catnip {
+    .stack {
+        min-width: 0ch;
+        background: #4747bd;
+        color: white;
+        border-radius: .25rem;
+        padding: .25rem;
+        header {
+            text-align: center;
+        }
+        &>div {
+            display: flex;
+            flex-direction: column-reverse;
+            border: thick solid currentColor;
+            border-top-left-radius: .125rem;
+            border-top-right-radius: .125rem;
+            border-top-width: 0;
+            &>div {
+                background-color: hsla(0, 100%, 100%, .2);
+                margin-top: .125rem;
+                padding: .125rem;
+                flex-grow: 1;
+                text-align: center;
+                &.empty::after {
+                    content: '·'
+                } // max-width: 15ch;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
