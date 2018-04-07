@@ -1,0 +1,22 @@
+.locals {
+    background: #47bd82;
+    border-radius: .25rem;
+    color: white;
+    padding: .25rem;
+    header {
+        text-align: center;
+    }
+    &>div {
+        display: flex;
+        &>div {
+            background-color: hsla(0, 100%, 100%, .2);
+            border: thin solid currentColor;
+            font-family: 'Fira Code', monospace;
+            flex-grow: 1;
+            text-align: center;
+            &.empty::before {
+                content: '·'
+            }
+        }
+    }
+}

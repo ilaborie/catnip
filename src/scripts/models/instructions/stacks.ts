@@ -1,19 +1,55 @@
-import {Instruction, Type, typePrefix} from "../input";
-import {Frame} from "../runtime";
+import { Frame } from "../Frame";
+import { Constant, Instruction, InstructionBuilder, Type, typePrefix } from "../input";
+
+export const stackInstructions: InstructionBuilder = {};
 
 const typedConst = (type: Type, value: any): Instruction => ({
     type,
     code: `${typePrefix(type)}const_${value}`,
     apply: (frame: Frame) => {
-        frame.stack.push({type, value});
+        frame.stack.push({ type, value });
+        frame.next();
     },
 });
 
-export const stackInstructions: { [index: string]: () => Instruction } = {};
+const typedStore = (type: Type, index: number): Instruction => ({
+    type,
+    code: `${typePrefix(type)}store_${index}`,
+    apply: (frame: Frame) => {
+        const value = frame.stack.pop();
+        frame.locals.set(index, value);
+        frame.next();
+    },
+});
 
-//
-for (let i = 0; i < 6; i++) {
-    stackInstructions[`iconst_${i}`] = () => typedConst(Type.Int, 1);
-    // TODO, iload_
-    // TODO, istore_
-}
+const typedLoad = (type: Type, index: number): Instruction => ({
+    type,
+    code: `${typePrefix(type)}load_${index}`,
+    apply: (frame: Frame) => {
+        const value = frame.locals.get(index);
+        frame.stack.push({ type, value });
+        frame.next();
+    },
+});
+
+// Typed const, store, load
+[Type.Int, Type.Long, Type.Float, Type.Double].forEach((type) => {
+    const t = typePrefix(type);
+
+    for (let i = 0; i < 6; i++) {
+        stackInstructions[`${t}const_${i}`] = () => typedConst(type, i);
+    }
+    for (let i = 0; i < 4; i++) {
+        stackInstructions[`${t}store_${i}`] = () => typedStore(type, i);
+        stackInstructions[`${t}load_${i}`] = () => typedLoad(type, i);
+    }
+});
+
+stackInstructions.ldc = (args: any[]): Instruction => ({
+    code: "ldc",
+    apply: (frame: Frame) => {
+        const value = args[0];
+        frame.stack.push({ type: Type.Constant, value });
+        frame.next();
+    },
+});

@@ -1,0 +1,7 @@
+.frames {
+    background: cornsilk;
+    &>div {
+        display: flex;
+        padding: .5rem;
+    }
+}

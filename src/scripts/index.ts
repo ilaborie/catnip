@@ -1,15 +1,25 @@
-import {constantPool} from "./parser/sample";
-import {renderConstantPool, renderMethodBody} from "./templates/inputs";
+import { MethodBody } from "./models/input";
+import { OperandStack } from "./models/OperandStack";
 
-const mount = (elt: HTMLElement | null): void => {
+import { Frame } from "./models/Frame";
+import { Frames } from "./models/Frames";
+import { LocalVariables } from "./models/LocalVariables";
+import { constantPool, sample } from "./parser/sample";
+import { renderFrames } from "./templates/frame";
+
+const frames = new Frames(constantPool, sample);
+console.log({ frames });
+
+window.catnip = (elt: HTMLElement | null): void => {
     if (elt !== null) {
-        elt.innerHTML = renderConstantPool(constantPool);
+        elt.innerHTML = renderFrames(frames);
 
+        const btn = document.querySelector(".frames menu .next") as HTMLButtonElement;
+        btn.onclick = () => {
+            frames.next();
+            elt.innerHTML = renderFrames(frames);
+         };
     } else {
         console.warn("Cannot mount element:", elt);
     }
 };
-
-// Main
-
-mount(document.querySelector("main"));

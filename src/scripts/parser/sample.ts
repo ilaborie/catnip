@@ -1,5 +1,6 @@
 import {MethodBody} from "./../models/input";
-import {constantPoolParser, methodParser} from "./parser-impl";
+import { constantPoolParser } from "./impl/constant-parser";
+import { methodParser } from "./impl/instruction-parser";
 
 const consts = `#1 = Methodref          #6.#18         // java/lang/Object."<init>":()V
    #2 = Fieldref           #19.#20        // java/lang/System.out:Ljava/io/PrintStream;
@@ -57,7 +58,7 @@ const mainCode = ` 0: getstatic     #2                  // Field java/lang/Syste
 
 export const constantPool = constantPoolParser.parse(consts);
 
-// export const sample = new Map<string, MethodBody>()
-//     .set('plop:(I)I', methodParser.parse(constantPool, 2, 3, 1, factorialCode))
-//     .set('main', methodParser.parse(constantPool, 2, 1, 1, mainCode))
-// ;
+export const sample = new Map<string, MethodBody>()
+    .set("plop:(I)I", methodParser.parse(constantPool, 2, 3, 1, factorialCode))
+    .set("main", methodParser.parse(constantPool, 2, 1, 1, mainCode))
+;

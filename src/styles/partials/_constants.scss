@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 5ch 1fr 1fr;
   grid-gap: .25rem;
-  font-family: monospace;
+  font-family: 'Fira Code';
 
   & > * {
     padding: .125rem;

@@ -1,0 +1,32 @@
+.stack {
+    min-width: 0ch;
+    background: #4747bd;
+    color: white;
+    border-radius: .25rem;
+    padding: .25rem;
+    header {
+        text-align: center;
+    }
+    &>div {
+        display: flex;
+        flex-direction: column-reverse;
+        border-left: medium solid currentColor;
+        border-right: medium solid currentColor;
+        border-bottom: medium solid currentColor;
+        &>div {
+            background-color: hsla(0, 100%, 100%, .2);
+            font-family: 'Fira Code', monospace;
+            // border: thin solid currentColor;
+            margin-top: .125rem;
+            padding: .125rem;
+            flex-grow: 1;
+            text-align: center;
+            &.empty::before {
+                content: '·'
+            }
+            max-width: 15ch;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

@@ -1,5 +1,6 @@
-import { Instruction } from "../input";
+import { Frame } from "../Frame";
+import { Instruction, InstructionBuilder } from "../input";
 
 //
 
-export const otherInstructions: { [index: string]: () => Instruction } = {};
+export const otherInstructions: InstructionBuilder = {};
