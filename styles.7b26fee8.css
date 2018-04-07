@@ -1,0 +1,174 @@
+@charset "UTF-8";
+.catnip {
+  --primaryColor: teal;
+  --selectedColor: magenta;
+  --frameColor: #4c2b70; }
+  .catnip * {
+    margin: 0;
+    padding: 0;
+    color: var(--primaryColor); }
+  .catnip body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+  .catnip button {
+    padding: .125rem .25rem;
+    border-radius: .25rem;
+    outline: none; }
+  .catnip menu {
+    text-align: right; }
+  .catnip details {
+    padding: .25rem; }
+    .catnip details summary {
+      cursor: pointer; }
+
+.catnip .constants {
+  display: grid;
+  grid-template-columns: 5ch 1fr 1fr;
+  grid-gap: .25rem;
+  font-family: 'Fira Code'; }
+  .catnip .constants > * {
+    padding: .125rem; }
+  .catnip .constants .index {
+    text-align: right; }
+    .catnip .constants .index::before {
+      content: '#'; }
+
+.catnip .frames {
+  background: cornsilk; }
+  .catnip .frames > div {
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: .5rem; }
+    .catnip .frames > div .frame {
+      margin: .5rem 0; }
+
+.catnip .frame {
+  border: thin solid rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+  padding: .5rem;
+  background-color: var(--frameColor);
+  --primaryColor: white;
+  box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header header" "code   stack" "locals locals";
+  opacity: 0.75;
+  filter: grayscale(0.8); }
+  .catnip .frame.current {
+    opacity: 1;
+    filter: none; }
+  .catnip .frame > header {
+    grid-area: header;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: thin solid rgba(0, 0, 0, 0.5); }
+    .catnip .frame > header::before {
+      content: '📦 '; }
+  .catnip .frame ul.code {
+    grid-area: code;
+    margin: .25rem; }
+  .catnip .frame .stack {
+    grid-area: stack;
+    align-self: end;
+    margin: .25rem;
+    box-shadow: 0.06125rem 0.06125rem 0.25rem rgba(0, 0, 0, 0.5); }
+  .catnip .frame .locals {
+    grid-area: locals;
+    margin: .25rem;
+    box-shadow: 0.06125rem 0.06125rem 0.25rem rgba(0, 0, 0, 0.5); }
+
+.catnip .code {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.2); }
+  .catnip .code li {
+    margin: 0;
+    padding: 0;
+    display: flex; }
+    .catnip .code li::before {
+      content: '➖ '; }
+    .catnip .code li > * {
+      padding: .125rem; }
+    .catnip .code li .position {
+      width: 2ch;
+      text-align: right; }
+    .catnip .code li .code {
+      font-weight: bold;
+      max-height: 25vh;
+      overflow: auto; }
+    .catnip .code li .args {
+      margin-left: 1rem;
+      flex-grow: 1;
+      text-align: right;
+      margin-right: .25rem; }
+  .catnip .code .selected {
+    background-color: var(--primaryColor); }
+    .catnip .code .selected::before {
+      content: '🔜 '; }
+    .catnip .code .selected > * {
+      --primaryColor: var(--frameColor); }
+
+.catnip .locals {
+  background: #47bd82;
+  border-radius: .25rem;
+  color: white;
+  padding: .25rem; }
+  .catnip .locals header {
+    text-align: center; }
+  .catnip .locals > div {
+    display: flex;
+    counter-reset: loc -1; }
+    .catnip .locals > div > div {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: medium solid currentColor;
+      flex-grow: 1;
+      text-align: center;
+      position: relative;
+      counter-increment: loc; }
+      .catnip .locals > div > div.empty::after {
+        content: '·'; }
+      .catnip .locals > div > div::before {
+        position: absolute;
+        left: 0;
+        top: -2ch;
+        color: rgba(255, 255, 255, 0.75);
+        content: counter(loc); }
+    .catnip .locals > div > div + div {
+      margin-left: .125rem; }
+
+.catnip .stack {
+  min-width: 0ch;
+  background: #4747bd;
+  color: white;
+  border-radius: .25rem;
+  padding: .25rem; }
+  .catnip .stack header {
+    text-align: center; }
+  .catnip .stack > div {
+    display: flex;
+    flex-direction: column-reverse;
+    border: thick solid currentColor;
+    border-top-left-radius: .125rem;
+    border-top-right-radius: .125rem;
+    border-top-width: 0; }
+    .catnip .stack > div > div {
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-top: .125rem;
+      padding: .125rem;
+      flex-grow: 1;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .catnip .stack > div > div.empty::after {
+        content: '·'; }
+
+.catnip header .args {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: .125rem;
+  border-radius: .125rem;
+  margin-left: .5rem; }
+  .catnip header .args span + span::before {
+    content: ', '; }
