@@ -8,11 +8,12 @@
   "private": true,
   "scripts": {
     "start": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html",
+    "build": "npx parcel build src/index.html --public-url .",
     "lint": "npx tslint --project . --fix --format stylish",
     "format": "prettier --parser typescript --write",
     "precommit": "npx lint-staged",
-    "test": "npx jest"
+    "test": "npx jest",
+    "publish": "rm -rf dist/ && npm run build && npx gh-pages -d dist"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
@@ -46,5 +47,7 @@
       "**/test/*.+(ts|tsx|js)"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "gh-pages": "^1.1.0"
+  }
 }
