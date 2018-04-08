@@ -19,7 +19,7 @@
                 &.empty::after {
                     content: '·'
                 }
-                counter-incement: loc;
+                counter-increment: loc;
                 &::before {
                     position: absolute;
                     left: 0;
