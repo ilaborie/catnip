@@ -4,28 +4,28 @@ import { methodParser } from "./impl/instruction-parser";
 
 const consts = `#1 = Methodref          #6.#18         // java/lang/Object."<init>":()V
    #2 = Fieldref           #19.#20        // java/lang/System.out:Ljava/io/PrintStream;
-   #3 = Methodref          #5.#21         // _01_factorial/Factorial.factorial:(I)I
+   #3 = Methodref          #5.#21         // _01_plop/Plop.plop:(I)I
    #4 = Methodref          #22.#23        // java/io/PrintStream.println:(I)V
-   #5 = Class              #24            // _01_factorial/Factorial
+   #5 = Class              #24            // _01_plop/Plop
    #6 = Class              #25            // java/lang/Object
    #7 = Utf8               <init>
    #8 = Utf8               ()V
    #9 = Utf8               Code
   #10 = Utf8               LineNumberTable
-  #11 = Utf8               factorial
+  #11 = Utf8               plop
   #12 = Utf8               (I)I
   #13 = Utf8               StackMapTable
   #14 = Utf8               main
   #15 = Utf8               ([Ljava/lang/String;)V
   #16 = Utf8               SourceFile
-  #17 = Utf8               Factorial.java
+  #17 = Utf8               Plop.java
   #18 = NameAndType        #7:#8          // "<init>":()V
   #19 = Class              #26            // java/lang/System
   #20 = NameAndType        #27:#28        // out:Ljava/io/PrintStream;
-  #21 = NameAndType        #11:#12        // factorial:(I)I
+  #21 = NameAndType        #11:#12        // plop:(I)I
   #22 = Class              #29            // java/io/PrintStream
   #23 = NameAndType        #30:#31        // println:(I)V
-  #24 = Utf8               _01_factorial/Factorial
+  #24 = Utf8               _01_plop/Plop
   #25 = Utf8               java/lang/Object
   #26 = Utf8               java/lang/System
   #27 = Utf8               out
