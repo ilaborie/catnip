@@ -1,6 +1,5 @@
 .catnip {
   --primaryColor: teal;
-  --selectedColor: magenta;
   --frameColor: #4c2b70;
   * {
     margin: 0;
@@ -12,15 +11,15 @@
   }
   main {}
   button {
-    padding: .125rem .25rem;
-    border-radius: .25rem;
+    padding: .125em .25em;
+    border-radius: .25em;
     outline: none;
   }
   menu {
     text-align: right;
   }
   details {
-    padding: .25rem;
+    padding: .25em;
     summary {
       cursor: pointer;
     }

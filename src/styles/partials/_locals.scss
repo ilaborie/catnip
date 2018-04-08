@@ -1,9 +1,9 @@
 .catnip {
     .locals {
         background: #47bd82;
-        border-radius: .25rem;
+        border-radius: .25em;
         color: white;
-        padding: .25rem;
+        padding: .25em;
         header {
             text-align: center;
         }
@@ -19,7 +19,7 @@
                 &.empty::after {
                     content: '·'
                 }
-                counter-increment: loc;
+                counter-incement: loc;
                 &::before {
                     position: absolute;
                     left: 0;
@@ -29,7 +29,7 @@
                 }
             }
             &>div+div {
-                margin-left: .125rem;
+                margin-left: .125em;
             }
         }
     }

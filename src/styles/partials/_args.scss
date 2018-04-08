@@ -1,9 +1,9 @@
 .catnip {
     header .args {
         background-color: hsla(0, 100%, 100%, .2);
-        padding: .125rem;
-        border-radius: .125rem;
-        margin-left: .5rem;
+        padding: .125em;
+        border-radius: .125em;
+        margin-left: .5em;
         span+span::before {
             content: ', ';
         }

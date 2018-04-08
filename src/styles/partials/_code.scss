@@ -13,7 +13,7 @@
             content: '➖ ';
         }
         >* {
-            padding: .125rem;
+            padding: .125em;
         }
         .position {
             width: 2ch;
@@ -25,10 +25,10 @@
             overflow: auto;
         }
         .args {
-            margin-left: 1rem;
+            margin-left: 1em;
             flex-grow: 1;
             text-align: right;
-            margin-right: .25rem;
+            margin-right: .25em;
         }
     }
     .selected {

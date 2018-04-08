@@ -2,10 +2,10 @@
   .constants {
     display: grid;
     grid-template-columns: 5ch 1fr 1fr;
-    grid-gap: .25rem;
+    grid-gap: .25em;
     font-family: 'Fira Code';
     &>* {
-      padding: .125rem;
+      padding: .125em;
     }
     .index {
       text-align: right;

@@ -3,8 +3,8 @@
         min-width: 0ch;
         background: #4747bd;
         color: white;
-        border-radius: .25rem;
-        padding: .25rem;
+        border-radius: .25em;
+        padding: .25em;
         header {
             text-align: center;
         }
@@ -12,13 +12,13 @@
             display: flex;
             flex-direction: column-reverse;
             border: thick solid currentColor;
-            border-top-left-radius: .125rem;
-            border-top-right-radius: .125rem;
+            border-top-left-radius: .125em;
+            border-top-right-radius: .125em;
             border-top-width: 0;
             &>div {
                 background-color: hsla(0, 100%, 100%, .2);
-                margin-top: .125rem;
-                padding: .125rem;
+                margin-top: .125em;
+                padding: .125em;
                 flex-grow: 1;
                 text-align: center;
                 &.empty::after {

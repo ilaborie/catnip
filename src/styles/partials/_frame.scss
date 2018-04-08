@@ -1,11 +1,11 @@
 .catnip {
     .frame {
         border: thin solid rgba(0, 0, 0, .5);
-        border-radius: .5rem;
-        padding: .5rem;
+        border-radius: .5em;
+        padding: .5em;
         background-color: var(--frameColor);
         --primaryColor: white;
-        box-shadow: .125rem .125rem .5rem rgba(0, 0, 0, .5);
+        box-shadow: .125em .125em .5em rgba(0, 0, 0, .5);
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-rows: auto 1fr auto;
@@ -27,18 +27,18 @@
         }
         ul.code {
             grid-area: code;
-            margin: .25rem;
+            margin: .25em;
         }
         .stack {
             grid-area: stack;
             align-self: end;
-            margin: .25rem;
-            box-shadow: .06125rem .06125rem .25rem rgba(0, 0, 0, .5);
+            margin: .25em;
+            box-shadow: .06125em .06125em .25em rgba(0, 0, 0, .5);
         }
         .locals {
             grid-area: locals;
-            margin: .25rem;
-            box-shadow: .06125rem .06125rem .25rem rgba(0, 0, 0, .5);
+            margin: .25em;
+            box-shadow: .06125em .06125em .25em rgba(0, 0, 0, .5);
         }
     }
 }
