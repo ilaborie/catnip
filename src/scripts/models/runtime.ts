@@ -1,8 +1,6 @@
-import { MethodBody, Type } from "./input";
-import { LocalVariables } from "./LocalVariables";
-import { OperandStack } from "./OperandStack";
+import { Type } from "./input";
 
 export interface Value {
-    type: Type;
-    value: any;
+  type: Type;
+  value: any;
 }

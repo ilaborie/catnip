@@ -1,7 +1,5 @@
 import { Constant, InstructionInstance, MethodBody } from "../../models/input";
 import { lookupInstruction } from "../../models/instructions";
-import { Value } from "../../models/runtime";
-import { TODO } from "../../models/utils";
 import { MethodParser } from "../parser";
 
 class MethodBodyImpl implements MethodBody {

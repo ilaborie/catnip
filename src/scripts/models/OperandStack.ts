@@ -5,6 +5,7 @@ type MaybeValue = Value | null;
 export class OperandStack {
   private _list: MaybeValue[];
   private _position = 0;
+
   get list(): MaybeValue[] {
     return this._list;
   }

@@ -1,9 +1,13 @@
+import { LocalVariables } from "../models/LocalVariables";
 import { Value } from "../models/runtime";
-import { LocalVariables } from "./../models/LocalVariables";
+import { renderTypedValue } from "./value";
 
 const renderLocalValue = (value: Value | null): string =>
-    value ? `<div class="type-${value.type}" title="${value.value}">${value.value}</div>` :
-        `<div class="empty"></div>`;
+  value
+    ? `<div class="type-${value.type}" title="${
+        value.value
+      }">${renderTypedValue(value.type, value.value)}</div>`
+    : `<div class="empty"></div>`;
 
 export const renderLocals = (locals: LocalVariables): string => `
 <div class="locals">

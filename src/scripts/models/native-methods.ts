@@ -4,6 +4,7 @@ import { Value } from "./runtime";
 
 export interface NativeMethod {
   args_size: number;
+
   call(args: any[]): Value | undefined;
 }
 

@@ -1,9 +1,4 @@
-import { MethodBody } from "./models/input";
-import { OperandStack } from "./models/OperandStack";
-
-import { Frame } from "./models/Frame";
 import { Frames } from "./models/Frames";
-import { LocalVariables } from "./models/LocalVariables";
 import { constantPool, sample } from "./parser/sample";
 import { renderFrames } from "./templates/frame";
 

@@ -1,11 +1,5 @@
 import { Frame } from "../Frame";
-import {
-  Constant,
-  Instruction,
-  InstructionBuilder,
-  Type,
-  typePrefix
-} from "../input";
+import { Instruction, InstructionBuilder, Type, typePrefix } from "../input";
 
 export const stackInstructions: InstructionBuilder = {};
 
@@ -62,4 +56,13 @@ stackInstructions.ldc = (args: any[]): Instruction => ({
   }
 });
 
-// dup, Tstore, Tload, bipush, putstatic, aastore
+stackInstructions.dup = (args: any[]): Instruction => ({
+  code: "dup",
+  apply: (frame: Frame) => {
+    const value = frame.stack.peek();
+    frame.stack.push(value);
+    frame.next();
+  }
+});
+
+// Tstore, Tload, bipush, putstatic, aastore

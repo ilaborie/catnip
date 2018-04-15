@@ -1,5 +1,5 @@
 import { Frame } from "../Frame";
-import { Instruction, InstructionBuilder, Type } from "../input";
+import { InstructionBuilder, Type } from "../input";
 
 export const objectsInstructions: InstructionBuilder = {};
 

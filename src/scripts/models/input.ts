@@ -1,6 +1,5 @@
 import { Frame } from "./Frame";
 import { Instruction } from "./input";
-import { Value } from "./runtime";
 
 export interface Constant {
   index: number;
@@ -9,6 +8,7 @@ export interface Constant {
 }
 
 export enum Type {
+  Ref,
   Constant,
   // Numeric
   Int,

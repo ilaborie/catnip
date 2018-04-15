@@ -1,10 +1,9 @@
 import { Frame } from "./Frame";
-import { Constant, MethodBody } from "./input";
+import { Constant, MethodBody, Type } from "./input";
 import { LocalVariables } from "./LocalVariables";
 import { nativeMethods } from "./native-methods";
 import { OperandStack } from "./OperandStack";
 import { Value } from "./runtime";
-import { TODO } from "./utils";
 
 export class Frames {
   public readonly frames: Frame[] = [];
@@ -23,7 +22,7 @@ export class Frames {
       throw new Error(`'main' method is missing`);
     }
     const mainFrame = this.createFrame("main", mainMethod, mainArgs);
-    mainFrame.locals.set(0, mainArgs[0]);
+    mainFrame.locals.set(0, { type: Type.Ref, value: mainArgs });
     this.frames.push(mainFrame);
   }
 

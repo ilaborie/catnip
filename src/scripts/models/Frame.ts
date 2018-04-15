@@ -3,12 +3,12 @@ import { InstructionInstance, MethodBody, Type } from "./input";
 import { LocalVariables } from "./LocalVariables";
 import { OperandStack } from "./OperandStack";
 import { Value } from "./runtime";
-import { TODO } from "./utils";
 
 export class Frame {
   get currentInstruction(): InstructionInstance {
     return this.getInstruction(this.position);
   }
+
   constructor(
     readonly parent: Frames,
     readonly name: string,

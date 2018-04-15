@@ -6,20 +6,23 @@ import { otherInstructions } from "./others";
 import { stackInstructions } from "./stacks";
 
 const allInstructions: InstructionBuilder = {
-    ...stackInstructions,
-    ...objectsInstructions,
-    ...mathInstructions,
-    ...flowInstructions,
-    ...otherInstructions,
+  ...stackInstructions,
+  ...objectsInstructions,
+  ...mathInstructions,
+  ...flowInstructions,
+  ...otherInstructions
 };
 
 console.log(`Got ${Object.keys(allInstructions).length} instructions`);
 
-export const lookupInstruction = (opscode: string, args: any[]): Instruction => {
-    const i = allInstructions[opscode];
-    if (i) {
-        return i(args);
-    }
+export const lookupInstruction = (
+  opscode: string,
+  args: any[]
+): Instruction => {
+  const i = allInstructions[opscode];
+  if (i) {
+    return i(args);
+  }
 
-    throw new Error(`Opscode ${opscode} not found !`);
+  throw new Error(`Opscode ${opscode} not found !`);
 };
