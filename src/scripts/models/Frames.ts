@@ -15,14 +15,14 @@ export class Frames {
   constructor(
     readonly constantPool: Constant[],
     readonly methods: Map<string, MethodBody>,
-    mainArgs: Value[] = []
+    mainArgs: Value[] = [{ type: Type.Ref, value: [] }]
   ) {
     const mainMethod = methods.get("main");
     if (!mainMethod) {
       throw new Error(`'main' method is missing`);
     }
     const mainFrame = this.createFrame("main", mainMethod, mainArgs);
-    mainFrame.locals.set(0, { type: Type.Ref, value: mainArgs });
+    mainFrame.locals.set(0, mainArgs[0]);
     this.frames.push(mainFrame);
   }
 
@@ -113,9 +113,8 @@ export class Frames {
 
   private getArgs(size: number): Value[] {
     const args: Value[] = [];
-    const stack = this.currentFrame.stack;
     for (let i = 0; i < size; i++) {
-      args.push(stack.pop());
+      args.push(this.currentFrame.stack.pop());
     }
     return args;
   }

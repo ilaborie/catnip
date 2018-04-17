@@ -4,10 +4,14 @@ import { Value } from "../models/runtime";
 import { renderConstantPool, renderMethodCode } from "./inputs";
 import { renderLocals } from "./locals";
 import { renderStack } from "./stack";
+import { renderTypedValue } from "./value";
 
 const renderArgs = (args: Value[]): string =>
   `<span class="args">${args
-    .map(({ type, value }) => `<span class="type-${type}">${value}</span>`)
+    .map(
+      ({ type, value }) =>
+        `<span class="type-${type}">${renderTypedValue(type, value)}</span>`
+    )
     .join("")}</span>`;
 
 const renderFrame = (frame: Frame, current: boolean): string => `
