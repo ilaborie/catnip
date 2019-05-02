@@ -1,19 +1,25 @@
+import { html, TemplateResult } from "lit-html";
+
 import { LocalVariables } from "../models/LocalVariables";
 import { Value } from "../models/runtime";
 import { renderTypedValue } from "./value";
 
-const renderLocalValue = (value: Value | null): string =>
+const renderLocalValue = (value: Value | null): TemplateResult =>
   value
-    ? `<div class="type-${value.type}" title="${
-        value.value
-      }">${renderTypedValue(value.type, value.value)}</div>`
-    : `<div class="empty"></div>`;
+    ? html`
+        <div class="type-${value.type}" title="${value.value}">
+          ${renderTypedValue(value.type, value.value)}
+        </div>
+      `
+    : html`
+        <div class="empty"></div>
+      `;
 
-export const renderLocals = (locals: LocalVariables): string => `
-<div class="locals">
+export const renderLocals = (locals: LocalVariables): TemplateResult => html`
+  <div class="locals">
     <header>Locals</header>
     <div>
-        ${locals.list.map(renderLocalValue).join("\n")}
+      ${locals.list.map(renderLocalValue)}
     </div>
-</div>
+  </div>
 `;

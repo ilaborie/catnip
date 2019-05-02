@@ -26,6 +26,14 @@ export class Frames {
     this.frames.push(mainFrame);
   }
 
+  // const btn = document.querySelector<HTMLButtonElement>(".frames menu .next" );
+  //     if (btn) {
+  //       btn.onclick = () => {
+  //         frames.next();
+  //         catnip(elt);
+  //       };
+  //     }
+
   public next() {
     const currentFrame = this.currentFrame;
     const { methodBody, position } = currentFrame;
