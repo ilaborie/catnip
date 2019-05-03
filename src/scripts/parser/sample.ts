@@ -2,7 +2,7 @@ import { MethodBody } from "./../models/input";
 import { constantPoolParser } from "./impl/constant-parser";
 import { methodParser } from "./impl/instruction-parser";
 
-const consts = `#1 = Methodref          #6.#18         // java/lang/Object."<init>":()V
+export const consts = `   #1 = Methodref          #6.#18         // java/lang/Object."<init>":()V
    #2 = Fieldref           #19.#20        // java/lang/System.out:Ljava/io/PrintStream;
    #3 = Methodref          #5.#21         // _01_plop/Plop.plop:(I)I
    #4 = Methodref          #22.#23        // java/io/PrintStream.println:(I)V

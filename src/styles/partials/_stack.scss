@@ -1,7 +1,7 @@
 .catnip {
     .stack {
         min-width: 0ch;
-        background: #4747bd;
+        background: var(--stackColor);
         color: white;
         border-radius: .25em;
         padding: .25em;

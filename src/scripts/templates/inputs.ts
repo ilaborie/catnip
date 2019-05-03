@@ -2,19 +2,11 @@ import { html, TemplateResult } from "lit-html";
 
 import { Constant, InstructionInstance } from "../models/input";
 
-export const renderConstantPool = (constantPool: Constant[]): TemplateResult =>
+export const renderConstantPool = (constants: string): TemplateResult =>
   html`
     <details>
       <summary>Constant Pool</summary>
-      <div class="constants">
-        ${constantPool.map(
-          constant => html`
-            <div class="index">${constant.index}</div>
-            <div class="type">${constant.type}</div>
-            <div class="value">${constant.value}</div>
-          `
-        )}
-      </div>
+      <div class="constants">${constants}</div>
     </details>
   `;
 

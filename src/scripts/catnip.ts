@@ -1,7 +1,7 @@
 import { render } from "lit-html";
 
 import { Frames } from "./models/Frames";
-import { constantPool, sample } from "./parser/sample";
+import { consts, sample } from "./parser/sample";
 import { renderFrames } from "./templates/frame";
 
 declare global {
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-const frames = new Frames(constantPool, sample);
+const frames = new Frames(consts, sample);
 
 export const catnip = (elt: HTMLElement | null): void => {
   if (elt !== null) {

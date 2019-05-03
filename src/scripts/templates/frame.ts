@@ -36,10 +36,10 @@ export const renderFrames = (
   ${renderConstantPool(frames.constantPool)}
   <details open class="frames">
     <summary>Frames</summary>
-    <menu>
+    <menu class="next">
       ${frames.frames.length > 0
         ? html`
-            <button type="button" class="next" @click=${display}>
+            <button type="button" @click=${display}>
               ↩️ Next
             </button>
           `

@@ -13,7 +13,7 @@ export class Frames {
   }
 
   constructor(
-    readonly constantPool: Constant[],
+    readonly constantPool: string,
     readonly methods: Map<string, MethodBody>,
     mainArgs: Value[] = [{ type: Type.Ref, value: [] }]
   ) {
@@ -36,7 +36,6 @@ export class Frames {
 
   public next() {
     const currentFrame = this.currentFrame;
-    const { methodBody, position } = currentFrame;
     const instruction = currentFrame.currentInstruction;
     instruction.instruction.apply(currentFrame);
   }

@@ -1,17 +1,6 @@
 .catnip {
   .constants {
-    display: grid;
-    grid-template-columns: 5ch 1fr 1fr;
-    grid-gap: .25em;
-    font-family: 'Fira Code';
-    &>* {
-      padding: .125em;
-    }
-    .index {
-      text-align: right;
-      &::before {
-        content: '#';
-      }
-    }
+    font-family: 'Fira Code', monospace;
+    white-space: pre;
   }
 }
